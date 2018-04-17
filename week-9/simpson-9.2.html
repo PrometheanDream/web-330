@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+        <meta charset="UTF-8">
+        <title>Hello MVC</title>
+    
+        <!-- Stylesheet - Bootstrap -->
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css"
+              integrity="sha384-PsH8R72JQ3SOdhVi3uxftmaW6Vc51MKb0q5P2rRUpPvrszuE4W1povHYgTpBfshb" crossorigin="anonymous">
+    
+        <!-- JavaScript references -->
+        <script src="https://code.jquery.com/jquery-3.1.0.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/underscore.js/1.8.3/underscore-min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/backbone.js/1.3.3/backbone-min.js"></script>
+    
+</head>
+
+<body>
+
+<nav class="navbar navbar-expand-sm bg-primary navbar-light">
+    <ul class="navbar-nav">
+        <li class="nav-item active">
+            <a class="nav-link" href="#">Home</a>
+        </li>
+        <li class="nav-item active">
+            <a class="nav-link" href="#">Home</a>
+        </li>
+        <li class="nav-item active">
+            <a class="nav-link" href="#">Home</a>
+        </li>
+    </ul>
+</nav>
+
+<div role="main" class="container">
+    <br/>
+    <br/>
+    <h1>Hello MVC Example 2</h1>
+    <p class="lead">Models and Collections...</p>
+
+    <div class="row">
+        <div class="col-sm-9">
+            <table class="table table-dark table-striped table-hover">
+                <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>Name</th>
+                    <th>Salary</th>
+                </tr>
+                </thead>
+                <tbody id="table-body"></tbody>
+            </table>
+        </div>
+    </div>
+</div>
+
+
+<script>
+
+    function Employee(id, name, salary) {
+        this.id = id;
+        this.name = name;
+        this.salary = salary;
+    }
+
+    var EmployeeModel = Backbone.Model.extend({
+        defaults: {
+            id: '',
+            name: '',
+            salary: 0
+        }
+    });
+
+    var EmployeeCollection = Backbone.Collection.extend({
+        model: EmployeeModel
+    });
+
+    var Employees = new EmployeeCollection();
+    Employees.add(new Employee(01, Edward, 70000));
+    Employees.add(new Employee(02, Angeline, 90000));
+    Employees.add(new Employee(03, Machialia, 85000));
+    Employees.add(new Employee(04, Ferdinand, 45000));
+    Employees.add(new Employee(05, Aaron, 75000));
+
+    Employees.each(function (employee){
+        $('#table-body').append(
+            '<tr>' +
+            '<td>' + fruit.get('id') + '</td>' +
+            '<td>' + fruit.get('name') + '</td>' +
+            '<td>' + fruit.get('salary') + '</td>' +
+            '</tr>'
+
+        );
+    });
+
+
+</script>
+</body>
+</html>
