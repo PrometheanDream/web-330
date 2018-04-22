@@ -1,4 +1,7 @@
 <!DOCTYPE html>
+<!--    Title: Assignment 9.2
+        Contributors: Professor Krasso, William Simpson 
+        Purpose/Function: To practice all of CRUD.-->
 <html lang="en">
 <head>
         <meta charset="UTF-8">
@@ -23,10 +26,10 @@
             <a class="nav-link" href="#">Home</a>
         </li>
         <li class="nav-item active">
-            <a class="nav-link" href="#">Home</a>
+            <a class="nav-link" href="#">About</a>
         </li>
         <li class="nav-item active">
-            <a class="nav-link" href="#">Home</a>
+            <a class="nav-link" href="#">Contact Us</a>
         </li>
     </ul>
 </nav>
@@ -75,18 +78,18 @@
     });
 
     var Employees = new EmployeeCollection();
-    Employees.add(new Employee(01, Edward, 70000));
-    Employees.add(new Employee(02, Angeline, 90000));
-    Employees.add(new Employee(03, Machialia, 85000));
-    Employees.add(new Employee(04, Ferdinand, 45000));
-    Employees.add(new Employee(05, Aaron, 75000));
+    Employees.add(new Employee("01", "Edward", 70000));
+    Employees.add(new Employee("02", "Angeline", 90000));
+    Employees.add(new Employee("03", "Machialia", 85000));
+    Employees.add(new Employee("04", "Ferdinand", 45000));
+    Employees.add(new Employee("05", "Aaron", 75000));
 
     Employees.each(function (employee){
         $('#table-body').append(
             '<tr>' +
-            '<td>' + fruit.get('id') + '</td>' +
-            '<td>' + fruit.get('name') + '</td>' +
-            '<td>' + fruit.get('salary') + '</td>' +
+            '<td>' + employee.get('id') + '</td>' +
+            '<td>' + employee.get('name') + '</td>' +
+            '<td>' + employee.get('salary') + '</td>' +
             '</tr>'
 
         );
